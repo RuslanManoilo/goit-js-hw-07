@@ -30,7 +30,14 @@ function onClick(event) {
         <img src="${datasetSource}">
     `);
 
-    instance.show()
-}
+    instance.show();
 
-galleryElem.addEventListener('keydown', escapeKey)
+    galleryElem.addEventListener('keydown', onEsc);
+
+    function onEsc(event) {
+        const keyEsc = event.code;
+        if (keyEsc === "Escape") {
+            instance.close()
+        }
+    }
+}
